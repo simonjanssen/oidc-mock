@@ -5,8 +5,19 @@ edition = "2024"
 rust-version = "1.85"
 description = "Mock OpenID Connect / OAuth 2.0 authorization server for testing"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/simonjanssen/oidc-mock"
 readme = "README.md"
 keywords = ["oidc", "oauth2", "mock", "testing", "openid"]
 categories = ["development-tools::testing", "authentication"]
 
 [dependencies]
+anyhow = "1.0.104"
+axum = { version = "0.8.9", features = ["form", "tokio"] }
+axum-extra = { version = "0.12.6", features = ["typed-header"] }
+chrono = "0.4.45"
+openidconnect = { version = "4.0.1", default-features = false }
+rand = "0.8.8"
+rsa = { version = "0.9.10", default-features = false, features = ["pem"] }
+serde = "1.0.229"
+tokio = { version = "1.54.1", default-features = false }
+tracing = "0.1.44"
