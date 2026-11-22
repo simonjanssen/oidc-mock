@@ -15,7 +15,7 @@ use openidconnect::{
     },
     url::Url,
 };
-use rsa::{PrivateKey, pkcs1::EncodeRsaPrivateKey};
+use rsa::{RsaPrivateKey, pkcs1::EncodeRsaPrivateKey};
 
 use crate::{
     error::AuthError,
@@ -26,7 +26,8 @@ use crate::{
 
 /// Generate a new random private key in PEM-format
 fn generate_pem() -> String {
-    let private_key = PrivateKey::new(&mut rand::rng(), 2048).expect("Failed to generate RSA key");
+    let private_key =
+        RsaPrivateKey::new(&mut rand::thread_rng(), 2048).expect("Failed to generate RSA key");
     private_key
         .to_pkcs1_pem(Default::default())
         .expect("Failed to encode private key")
@@ -37,6 +38,12 @@ fn generate_pem() -> String {
 fn generate_signing_key(pem: &str) -> CoreRsaPrivateSigningKey {
     let kid = JsonWebKeyId::new("key1".to_string());
     CoreRsaPrivateSigningKey::from_pem(pem, Some(kid)).expect("Invalid PEM")
+}
+
+#[cfg(test)]
+#[test]
+fn generated_pem_is_valid_signing_key() {
+    generate_signing_key(&generate_pem());
 }
 
 /// Generate public JWKs for private signing key (hosted via jwks_uri)

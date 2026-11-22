@@ -14,7 +14,7 @@ use openidconnect::{
     },
     url::Url,
 };
-use rand::RngExt;
+use rand::Rng;
 use serde::Deserialize;
 use tracing::warn;
 
@@ -25,7 +25,7 @@ use crate::{
 
 /// Generate code
 fn generate_code() -> String {
-    let bytes: [u8; 32] = rand::rng().random();
+    let bytes: [u8; 32] = rand::thread_rng().r#gen();
     bytes.iter().map(|b| format!("{b:02x}")).collect()
 }
 
