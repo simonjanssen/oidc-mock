@@ -10,3 +10,13 @@ keywords = ["oidc", "oauth2", "mock", "testing", "openid"]
 categories = ["development-tools::testing", "authentication"]
 
 [dependencies]
+anyhow = "1.0.104"
+axum = { version = "0.8.9", features = ["form", "tokio", "http2"] }
+axum-extra = { version = "0.12.6", features = ["typed-header"] }
+chrono = "0.4.45"
+openidconnect = "4.0.1"
+rand = { version = "0.10.4", features = ["thread_rng"] }
+rsa = { version = "0.10.0", default-features = false, features = ["encoding"] }
+serde = "1.0.229"
+tokio = { version = "1.54.1", default-features = false }
+tracing = "0.1.44"
