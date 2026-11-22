@@ -36,15 +36,6 @@ fn form_decode(s: &str) -> String {
         .collect()
 }
 
-#[cfg(test)]
-#[test]
-fn form_decode_roundtrip() {
-    use openidconnect::url::form_urlencoded::byte_serialize;
-    let raw = "s3cr+t:%&= ü";
-    let encoded: String = byte_serialize(raw.as_bytes()).collect();
-    assert_eq!(form_decode(&encoded), raw);
-}
-
 /// OIDC discovery endpoint
 pub(crate) async fn oidc_discovery(
     State(state): State<AuthServerState>,

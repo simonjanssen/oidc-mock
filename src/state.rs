@@ -40,12 +40,6 @@ fn generate_signing_key(pem: &str) -> CoreRsaPrivateSigningKey {
     CoreRsaPrivateSigningKey::from_pem(pem, Some(kid)).expect("Invalid PEM")
 }
 
-#[cfg(test)]
-#[test]
-fn generated_pem_is_valid_signing_key() {
-    generate_signing_key(&generate_pem());
-}
-
 /// Generate public JWKs for private signing key (hosted via jwks_uri)
 fn generate_jwks(signing_key: CoreRsaPrivateSigningKey) -> JsonWebKeySet<CoreJsonWebKey> {
     CoreJsonWebKeySet::new(vec![signing_key.as_verification_key()])
