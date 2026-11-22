@@ -5,6 +5,7 @@ edition = "2024"
 rust-version = "1.85"
 description = "Mock OpenID Connect / OAuth 2.0 authorization server for testing"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/simonjanssen/oidc-mock"
 readme = "README.md"
 keywords = ["oidc", "oauth2", "mock", "testing", "openid"]
 categories = ["development-tools::testing", "authentication"]
