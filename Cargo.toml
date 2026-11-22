@@ -11,7 +11,7 @@ categories = ["development-tools::testing", "authentication"]
 
 [dependencies]
 anyhow = "1.0.104"
-axum = { version = "0.8.9", features = ["form", "tokio", "http2"] }
+axum = { version = "0.8.9", features = ["form", "tokio"] }
 axum-extra = { version = "0.12.6", features = ["typed-header"] }
 chrono = "0.4.45"
 openidconnect = { version = "4.0.1", default-features = false }
