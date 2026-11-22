@@ -1,6 +1,6 @@
 # Github config and workflows
 
-In this folder there is configuration for codecoverage, dependabot, and ci
+In this folder there is configuration for dependabot and ci
 workflows that check the library more deeply than the default configurations.
 
 This folder can be or was merged using a --allow-unrelated-histories merge
