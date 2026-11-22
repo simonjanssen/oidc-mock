@@ -4,3 +4,5 @@ pub mod error;
 pub mod factory;
 pub mod server;
 pub mod state;
+
+pub use factory::AuthServer;
