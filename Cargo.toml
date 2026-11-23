@@ -2,7 +2,7 @@
 name = "oidc-mock"
 version = "0.2.0"
 edition = "2024"
-rust-version = "1.85"
+rust-version = "1.88"
 description = "Mock OpenID Connect / OAuth 2.0 authorization server for testing"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/simonjanssen/oidc-mock"
