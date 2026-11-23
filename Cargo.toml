@@ -21,3 +21,13 @@ rsa = { version = "0.9.10", default-features = false, features = ["pem"] }
 serde = "1.0.229"
 tokio = { version = "1.54.1", default-features = false }
 tracing = "0.1.44"
+
+[dev-dependencies]
+http-body-util = "0.1.5"
+jsonwebtoken = { version = "10.3.0", features = ["rust_crypto"] }
+openidconnect = { version = "4.0.1", default-features = false, features = ["reqwest"] }
+reqwest = "0.13.5"
+serde_json = "1.0.154"
+tokio = { version = "1.54.1", features = ["rt-multi-thread"] }
+tower = { version = "0.5.3", features = ["util"] }
+url = "2.5.9"
